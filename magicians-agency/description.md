@@ -1,3 +1,3 @@
-You have recently been hired by SpellCheckers Inc. a renowned magician agency. Your tasks include administering magician
-records and organizing events. Recently, while adding a new magician, you noticed strange behaviour in the
-administration application. You have decided to investigate, lest your competitor find a way to compromise your systems!
+Welcome new employee! As you are aware, we at SpellCheckers Inc. are the foremost experts at creating magical days for
+our clients. Please fell free to explore our administration application. Be aware that we are currently rebuilding the
+system using our proprietary, cutting edge interpreter.
