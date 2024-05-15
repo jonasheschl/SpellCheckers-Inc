@@ -22,7 +22,7 @@
                     <a class="nav-link" href="/magicians.php">Magicians</a>
                 </li>
                 <li class="nav-item">
-                    <a class="nav-link" href="/booking.php">Booking</a>
+                    <a class="nav-link" href="/rebuild?page=booking">Booking</a>
                 </li>
                 <li class="nav-item">
                     <a class="nav-link" href="/administration.php">Magician Administration</a>
