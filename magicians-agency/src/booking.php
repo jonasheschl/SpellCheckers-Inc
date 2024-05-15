@@ -1,5 +1,5 @@
 <?php
-include_once "magicians.php";
+include_once "header.php";
 ?>
 
-<span>booking here</span>
+<h1>Booking</h1>
