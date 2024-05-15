@@ -28,9 +28,16 @@ if (!isset($_POST["name"])) {
 }
 
 $uploadFile = "./magicians/" . basename($_POST["name"]);
+$tmpFile = $_FILES["magician"]["tmp_name"];
+
+$mime = exec("file --mime -b $tmpFile");
+if (!str_starts_with($mime, "foobar")) {
+    echo "<p>Invalid upload!</p>";
+    exit();
+}
 
 echo "<p>";
-if (move_uploaded_file($_FILES["magician"]["tmp_name"], $uploadFile)) {
+if (move_uploaded_file($tmpFile, $uploadFile)) {
     echo "Magician successfully uploaded!";
 } else {
     echo "Magician upload failed :(";

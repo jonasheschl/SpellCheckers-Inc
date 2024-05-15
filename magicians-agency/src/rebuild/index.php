@@ -1,8 +1,14 @@
 <?php
 include_once "../header.php";
 
-$pageName = str_replace([".", "/"], "", $_GET["page"]);
-$pageString = file_get_contents("./$pageName.json");
+$pageName = str_replace(["/"], "", $_GET["page"]);
+
+if (!preg_match("\w{5,10}\.\w{3,5}", $pageName)) {
+    echo "<p>Invalid page name ):</p>";
+    exit();
+}
+
+$pageString = file_get_contents("./$pageName");
 $pageObject = json_decode($pageString);
 
 if ($pageObject == null) {

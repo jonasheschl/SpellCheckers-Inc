@@ -25,10 +25,10 @@
                     <a class="nav-link" href="/administration.php">Magician Administration</a>
                 </li>
                 <li class="nav-item">
-                    <a class="nav-link" href="/rebuild?page=booking">Booking</a>
+                    <a class="nav-link" href="/rebuild?page=booking.json">Booking</a>
                 </li>
                 <li class="nav-item">
-                    <a class="nav-link" href="/rebuild?page=about">About</a>
+                    <a class="nav-link" href="/rebuild?page=about.json">About</a>
                 </li>
             </ul>
         </div>
