@@ -10,7 +10,7 @@ include_once "header.php";
     foreach ($magicians as $magician) {
         if ($magician == "." or $magician == "..") continue;
 
-        $name = explode("magic", $magician)[0];
+        $name = htmlspecialchars(explode("magic", $magician)[0], ENT_QUOTES, "UTF-8");
         $path = "/magicians/" . $magician;
 
         echo
