@@ -2,4 +2,4 @@
 include_once "header.php";
 ?>
 
-<h1>Booking</h1>
+<h1 class="text-center my-5">Booking</h1>

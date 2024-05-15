@@ -2,15 +2,15 @@
 include_once "header.php";
 ?>
 
-<h1>Administration</h1>
+<h1 class="text-center my-5">Administration</h1>
 
 <h2>Add a magician</h2>
 <form enctype="multipart/form-data" method="POST">
-    <label for="inputName">Name</label>
-    <input id="inputName" name="name" type="text"/>
-    <label for="inputMagician">Magician Image</label>
-    <input id="inputMagician" name="magician" type="file"/>
-    <input type="submit" value="Add magician"/>
+    <label for="inputName" class="form-label mt-3">Name</label>
+    <input id="inputName" name="name" type="text" required class="form-control"/>
+    <label for="inputMagician" class="form-label mt-3">Magician Image</label>
+    <input id="inputMagician" name="magician" required type="file" class="form-control"/>
+    <input type="submit" value="Add magician" class="form-control mt-3"/>
 </form>
 
 <?php
@@ -36,3 +36,4 @@ if (move_uploaded_file($_FILES["magician"]["tmp_name"], $uploadFile)) {
 }
 echo "</p>";
 ?>
+

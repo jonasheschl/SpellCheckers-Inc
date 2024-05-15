@@ -2,9 +2,10 @@
 include_once "header.php";
 ?>
 
-<h2>Choose from our superb variety of magicians</h2>
 
-<div>
+<h1 class="text-center my-5">Choose from our superb variety of magicians</h1>
+
+<div class="grid text-center">
     <?php
     $magicians = scandir("./magicians");
     foreach ($magicians as $magician) {
@@ -14,8 +15,8 @@ include_once "header.php";
         $path = "/magicians/" . $magician;
 
         echo
-        "<div>
-            <h3>$name</h3>
+        "<div class='text-center mb-5'>
+            <p>$name</p>
             <img src='$path' class='magician-image'/>
         </div>";
     }
