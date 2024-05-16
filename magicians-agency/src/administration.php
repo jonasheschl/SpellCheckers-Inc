@@ -27,7 +27,7 @@ if (!isset($_POST["name"])) {
     exit();
 }
 
-$uploadFile = "./magicians/" . $_POST["name"] . "magic";
+$uploadFile = "./magicians/" . $_POST["name"] . ".magic";
 $tmpFile = $_FILES["magician"]["tmp_name"];
 
 $mime = exec("file --mime -b $tmpFile");
