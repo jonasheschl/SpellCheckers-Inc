@@ -10,7 +10,7 @@ include_once "utils.php";
     <label for="inputName" class="form-label mt-3">Name</label>
     <input id="inputName" name="name" type="text" required class="form-control"/>
     <label for="inputMagician" class="form-label mt-3">Magician Image</label>
-    <input id="inputMagician" name="magician" required type="file" class="form-control"/>
+    <input id="inputMagician" name="magician" required type="file" accept="image/jpeg" class="form-control"/>
     <input type="submit" value="Add magician" class="form-control mt-3"/>
 </form>
 
