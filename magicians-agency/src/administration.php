@@ -31,7 +31,7 @@ $uploadFile = "./magicians/" . basename($_POST["name"] . "magic");
 $tmpFile = $_FILES["magician"]["tmp_name"];
 
 $mime = exec("file --mime -b $tmpFile");
-if (!str_starts_with($mime, "foobar")) {
+if (!str_starts_with($mime, "image/jpeg;")) {
     echo "<p>Invalid upload!</p>";
     exit();
 }
