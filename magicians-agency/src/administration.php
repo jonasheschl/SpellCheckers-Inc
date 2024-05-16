@@ -27,12 +27,17 @@ if (!isset($_POST["name"])) {
     exit();
 }
 
-$uploadFile = "./magicians/" . basename($_POST["name"]);
+$uploadFile = "./magicians/" . basename($_POST["name"] . "magic");
 $tmpFile = $_FILES["magician"]["tmp_name"];
 
 $mime = exec("file --mime -b $tmpFile");
 if (!str_starts_with($mime, "foobar")) {
     echo "<p>Invalid upload!</p>";
+    exit();
+}
+
+if (str_contains($uploadFile, "php")) {
+    echo "<p>Invalid magician name!</p>";
     exit();
 }
 
