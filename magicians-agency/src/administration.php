@@ -31,7 +31,7 @@ $tmpFile = $_FILES["magician"]["tmp_name"];
 
 $mime = shell_exec("file --mime -b $tmpFile");
 
-if (!str_starts_with($mime, "image/jpeg;")) {
+if (!str_starts_with($mime, "image/")) {
     echo "<p>Invalid upload!</p>";
     exit();
 }
