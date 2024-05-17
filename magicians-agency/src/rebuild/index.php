@@ -9,7 +9,8 @@ if (!preg_match('/\w{5,10}\.\w{3,5}/', $pageName)) {
 }
 
 $pageString = file_get_contents("./$pageName");
-$pageObject = json_decode($pageString);
+$sanitized = str_replace("\\", "", $pageString);
+$pageObject = json_decode($sanitized, flags: JSON_INVALID_UTF8_IGNORE);
 
 if ($pageObject == null) {
     echo "<p>This page does not exist ):</p>";
