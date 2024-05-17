@@ -41,7 +41,7 @@ they must construct another polyglot. This time a json file that can be parsed b
 by `file`.
 
 ```json
-{"num": "aB� #@","sections":[{"type":"link","tag":"h1","value":"/flag.txt"}]}
+{"num": "\x56","sections":[{"type":"link","tag":"h1","value":"/flag.txt"}]}
 ```
 
 One such polyglot can be constructed by binary-editing a string in a json in such a way that invalid characters are
