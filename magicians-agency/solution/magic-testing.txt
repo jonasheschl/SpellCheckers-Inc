@@ -1,5 +1,0 @@
-8    string  {   jpeg
-
-
-0	string  {	jpeg
-!:mime  image/jpeg
