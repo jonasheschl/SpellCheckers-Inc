@@ -24,8 +24,19 @@ The magic itself can look like this:
 !:mime  image/jpeg
 ```
 
-However, the magic must also pass the mime check for jpegs when uploading magicians. Since the magic
-todo
+However, the magic must also pass the mime check for image when uploading magicians and be a valid magic file (see man 5
+file). Thus, a second polyglot must be constructed.
+
+```
+if (!preg_match('\w{1,5} image.*', $mime)) {
+    echo "<p>Invalid upload!</p>";
+    exit();
+}
+```
+
+One such polyglot can be crated using XBM images. XBM images are based solely on printable characters. Furthermore,
+the checks performed by `file` allow every line to be prefixed be a `#`. Sine `#` is used by libmagic as for comments
+the XBM image will not cause `file` to error out during mime checks.
 
 ### Overwriting the magic
 
