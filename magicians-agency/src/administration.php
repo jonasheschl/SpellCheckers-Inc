@@ -31,7 +31,7 @@ $tmpFile = $_FILES["magician"]["tmp_name"];
 
 $mime = shell_exec("file --mime -b $tmpFile");
 
-if (!str_starts_with($mime, "image/")) {
+if (!preg_match('\w{1,5} image.*', $mime)) {
     echo "<p>Invalid upload!</p>";
     exit();
 }
