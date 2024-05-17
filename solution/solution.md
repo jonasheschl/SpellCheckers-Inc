@@ -68,4 +68,4 @@ Finally, users render the custom template by navigating to `/rebuild.php?site=..
 1. Navigate to `administration.php`.
 2. Upload `magic.xbm` with the name `../../../../home/app/`.
 3. Upload `exfil.json` with the name `exfil`.
-4. Navigate to `rebuild/?page=../magicians/exfil.json
+4. Navigate to `rebuild/?page=../magicians/exfil.magic`
