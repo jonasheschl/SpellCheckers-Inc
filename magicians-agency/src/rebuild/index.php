@@ -1,7 +1,7 @@
 <?php
 include_once "../header.php";
 
-$pageName = str_replace(["/"], "", $_GET["page"]);
+$pageName = $_GET["page"];
 
 if (!preg_match('/\w{5,10}\.\w{3,5}/', $pageName)) {
     echo "<p>Invalid page name ):</p>";
