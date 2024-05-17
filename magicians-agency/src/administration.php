@@ -1,6 +1,5 @@
 <?php
 include_once "header.php";
-include_once "utils.php";
 ?>
 
 <h1 class="text-center my-5">Administration</h1>
