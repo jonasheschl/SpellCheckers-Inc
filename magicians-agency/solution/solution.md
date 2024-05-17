@@ -62,3 +62,10 @@ in `file` not recognizing the file as json but will be stripped by the *sanitiza
 ## Getting the flag
 
 Finally, users render the custom template by navigating to `/rebuild.php?site=../magicians/NAME.json`.
+
+# tl;dr
+
+1. Navigate to `administration.php`.
+2. Upload `magic.xbm` with the name `../../../../home/app/`.
+3. Upload `exfil.json` with the name `exfil`.
+4. Navigate to `rebuild/?page=../magicians/exfil.json
