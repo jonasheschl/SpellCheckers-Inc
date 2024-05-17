@@ -8,7 +8,8 @@ COPY src/ .
 
 RUN useradd --user-group --system --create-home --no-log-init app
 
-RUN chown app magicians && \
-    chown app rebuild
+RUN chown app magicians
 
 USER app
+
+ENV HOME=/home/app
