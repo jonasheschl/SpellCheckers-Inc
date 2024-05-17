@@ -36,7 +36,3 @@
 </nav>
 <div class="container my-8">
 
-<?php
-putenv("HOME=/home/app");
-?>
-
