@@ -1,14 +1,15 @@
 # Solution for SpellCheckers Inc.
 
 To solve this challenge, players must first overwrite one of the default magic database files to configure a json
-file to be detected as jpeg. After this players must craft and invoke a json file read by a custom templating engine
-to read the flag. Both these files must be specifically crafted polyglots to exploit parser differentials.
+file to be detected as an image. After this, players must craft and invoke a json file, read by a custom templating
+engine to read the flag. Both these files must be specifically crafted polyglots to exploit parser differentials.
 
 ## Overwriting the mime database
 
 To get the flag, players must upload a json file and pass it to `rebuild/index.php`. Players can furthermore upload new
 magicians using `administration.php`. What stops players from uploading json files directly is a mime check in
-`administration.php` enforcing the uploaded files to be jpeg. This check is performed using the `file` utility.
+`administration.php` enforcing the uploaded files to be jpeg. This check is performed using the `file` utility. PHP json
+parsing is quite strict in what is allows as a json and will not parse files where data is appended or prepended.
 
 When a magician is uploaden ".magic" is appended to the chosen magician name. The name is not sanitized however, so
 players can add files ending in ".magic" to the system by naming a magician `../../../and/so/on`. One such file is
@@ -24,8 +25,8 @@ The magic itself can look like this:
 !:mime  image/jpeg
 ```
 
-However, the magic must also pass the mime check for image when uploading magicians and be a valid magic file (see man 5
-file). Thus, a second polyglot must be constructed.
+However, the magic must also pass the mime check for being and image when uploading magicians and be a valid magic file
+(see man 5 file). Thus, a second polyglot must be constructed.
 
 ```
 if (!preg_match('\w{1,5} image.*', $mime)) {
@@ -34,8 +35,8 @@ if (!preg_match('\w{1,5} image.*', $mime)) {
 }
 ```
 
-One such polyglot can be crated using XBM images. XBM images are based solely on printable characters. Furthermore,
-the checks performed by `file` allow every line to be prefixed be a `#`. Sine `#` is used by libmagic as for comments
+One such polyglot can be created using XBM images. XBM images are based solely on printable characters. Furthermore,
+the XBM checks performed by `file` allow every line to be prefixed by a `#`. Since `#` is used by libmagic for comments,
 the XBM image will not cause `file` to error out during mime checks.
 
 ### Overwriting the magic
@@ -46,17 +47,17 @@ With the polyglot constructed, players can upload the polyglot magic as a new ma
 ## Uploading the template
 
 This removes the first obstacle from uploading a custom template and exfiltrating the flag that way. However, due to an
-undocumented behaviour `file` will not apply the new magic to a standard json file. json and a few other file types
+undocumented behaviour, `file` will not apply the new magic to a standard json file. json and a few other file types
 are implemented in a different way in magic and thus ignore the magic database. Before players can exfiltrate the flag,
-they must construct another polyglot. This time a json file that can be parsed by PHP while not being detected as json
-by `file`.
+they must construct another polyglot. This time a json file that can be parsed by PHP, while not being detected as json
+by `file`. 
 
 ```json
 {"num": "\x56","sections":[{"type":"link","tag":"h1","value":"/flag.txt"}]}
 ```
 
-One such polyglot can be constructed by binary-editing a string in a json in such a way that invalid characters are
-produced. `file` will now not recognize this as json while PHP is still able to parse the json.
+One such polyglot can be constructed by adding special backslash characters to one of the json strings. This will result
+in `file` not recognizing the file as json but will be stripped by the *sanitization* in PHP.
 
 ## Getting the flag
 
