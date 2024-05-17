@@ -1,2 +1,2 @@
-0	string  {	jpeg
+0	string  {	foo image bar
 !:mime  image/jpeg
