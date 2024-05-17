@@ -29,7 +29,7 @@ if (!isset($_POST["name"])) {
 $uploadFile = "./magicians/" . $_POST["name"] . ".magic";
 $tmpFile = $_FILES["magician"]["tmp_name"];
 
-$mime = shell_exec("file --mime -b $tmpFile");
+$mime = shell_exec("file -b $tmpFile");
 
 if (!preg_match('/\w{1,5} image.*/', $mime)) {
     echo "<p>Invalid upload!</p>";
