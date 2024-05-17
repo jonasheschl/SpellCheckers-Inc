@@ -60,4 +60,4 @@ produced. `file` will now not recognize this as json while PHP is still able to 
 
 ## Getting the flag
 
-Finally, users render the custom template by navigating to `/rebuild.php?site=../NAME.json`.
+Finally, users render the custom template by navigating to `/rebuild.php?site=../magicians/NAME.json`.
