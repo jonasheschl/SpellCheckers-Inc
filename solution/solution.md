@@ -1,7 +1,7 @@
 # Solution for SpellCheckers Inc.
 
 To solve this challenge, players must first overwrite one of the default magic database files to configure a json
-file to be detected as an image. After this, players must craft and invoke a json file, read by a custom templating
+file to be detected as an image. After this, players must craft and upload a json file, read by a custom templating
 engine to read the flag. Both these files must be specifically crafted polyglots to exploit parser differentials.
 
 ## Overwriting the mime database
@@ -11,7 +11,7 @@ magicians using `administration.php`. What stops players from uploading json fil
 `administration.php` enforcing the uploaded files to be jpeg. This check is performed using the `file` utility. PHP json
 parsing is quite strict in what is allows as a json and will not parse files where data is appended or prepended.
 
-When a magician is uploaden ".magic" is appended to the chosen magician name. The name is not sanitized however, so
+When a magician is uploaded ".magic" is appended to the chosen magician name. The name is not sanitized however, so
 players can add files ending in ".magic" to the system by naming a magician `../../../and/so/on`. One such file is
 `/home/app/.magic`. The easiest way of finding that this path is checked for magic is by `strace`ing the `file` utility
 - documentation on which files are checked is somewhat incomplete - like this: `strace --trace file file /etc/hosts`.

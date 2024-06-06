@@ -6,7 +6,7 @@ white box, meaning with the source code provided. Don't include solutions or the
 
 ## Structure
 
-+ `description.txt`: This file contains the challenge description of the CTF platform.
-+ `solution`: This directory contains the sample writeup as well as all a bunch of custom files for solving this challenge.
++ `description.txt`: This file contains the challenge description for the CTF platform.
++ `solution`: This directory contains the sample writeup as well as a bunch of custom files for solving this challenge.
 + `src`, `Dockerfile`, `docker-compose.yaml`: Source code and configuration files to run the challenge.
 + `flag.txt`: The flag to exfiltrate.
